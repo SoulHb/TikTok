@@ -6,6 +6,7 @@ This documentation provides information about the TikTok segmentation project, i
 
 ### Data
 The dataset used for training and scoring is loaded with pytorch and consists images with dancing people.
+Link on dataset: https://www.kaggle.com/datasets/tapakah68/segmentation-full-body-tiktok-dancing-dataset
 
 ## Model Architecture
 The TikTok segmentation neural network model is built using the Unet architecture. The architecture of the model consists two parts -- encoder and decoder.
