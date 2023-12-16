@@ -11,8 +11,20 @@ Link on dataset: https://www.kaggle.com/datasets/tapakah68/segmentation-full-bod
 
 ## Model Architecture
 The TikTok segmentation neural network model is built using the Unet architecture. The architecture of the model consists two parts -- encoder and decoder.
-
-## Training
+## Usage
+```bash
+git clone https://github.com/SoulHb/TikTok.git
+```
+Clone repository
+```bash
+cd TikTok
+```
+move to project folder
+```bash
+pip install -r requirements.txt
+```
+Install dependencies
+### Training
 The model is trained on the provided dataset using the following configuration:
 - Optimizer: Adam
 - Learning rate: 0.001
@@ -20,25 +32,53 @@ The model is trained on the provided dataset using the following configuration:
 - Batch size: 8
 - Number of epochs: 10
 
+```bash
+python train.py --saved_model_path your_model_path --epochs 10 --lr 0.001 --batch_size 32 /path/to/result /path/to/masks
+```
+Run train.py
+
 ## IOU
 After training, the model achieved an IOU of 90% on the validation set.
 
-## Usage
+## Inference
 To use the trained model for TikTok segmentation, follow the instructions below:
 
-Build docker image using command:
- ```bash
-docker-compose -f docker_compose_file_path up
-```
-### Example:
+### Without docker:
+
 ```bash
-docker-compose -f D:\Project\TikTok\docker-compose.yml up
+cd src
 ```
-### Example input/output:
+Move to src folder
+```bash
+python inference.py --saved_model_path /path/to/your/saved/model
+```
+Run Flask api
+
+```bash
+streamlit run /home/solution/Downloads/project/TikTok/src/ui.py
+```
+Run streamlit ui
+### With docker:
+
+```bash
+cd src
+```
+Move to src folder
+ ```bash
+docker-compose -f ./docker_compose.yml up
+```
+Run docker-compose
+
+### Example input/output image:
     
-![Input](input.png)
+![Input](result/input.png)
 
 
-![output](output.png)
+![output](result/output.png)
+
+### Example input/output video:
+
+![output](result/input.gif)
+
 ## Author
 This TikTok segmentation project was developed by Namchuk Maksym. If you have any questions, please contact with me: namchuk.maksym@gmail.com

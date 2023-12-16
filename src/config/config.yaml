@@ -1,0 +1,6 @@
+saved_model_folder: './saved_models'
+model_file: 'model.pth'
+model_url: 'https://drive.google.com/uc?export=download&id=1fgAMR_2Hga2zcnRTRoZvHy_5xxtEcdTC'
+lr: 0.001
+batch_size: 8
+number_of_epochs: 10
