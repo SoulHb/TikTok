@@ -39,7 +39,7 @@ def load_model(url, output_path):
 
 
 # Access configuration values
-with open('./config/config.yaml', 'r') as config_file:
+with open('config.yaml', 'r') as config_file:
     config = yaml.safe_load(config_file)
 SAVED_MODEL_FOLDER = config['saved_model_folder']
 MODEL_FILE = config['model_file']
@@ -47,7 +47,7 @@ MODEL_URL = config['model_url']
 LR = config['lr']
 EPOCHS = config['batch_size']
 BATCH_SIZE = config['number_of_epochs']
-# Create result folder
+# Create Examples folder
 create_save_result_folder(SAVED_MODEL_FOLDER)
 # load model
 load_model(url=MODEL_URL, output_path=os.path.join(SAVED_MODEL_FOLDER, MODEL_FILE))

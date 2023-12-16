@@ -7,10 +7,10 @@ from torch.utils.data import Dataset
 class TikTok(Dataset):
     def __init__(self, images_dir, masks_dir, transform):
         """
-               Init method for Custom PyTorch Dataset for TikTok result and masks.
+               Init method for Custom PyTorch Dataset for TikTok Examples and masks.
 
                 Args:
-                    images_dir (str): Directory containing the result.
+                    images_dir (str): Directory containing the Examples.
                     masks_dir (str): Directory containing the masks.
                     transform (dict): Dictionary with image and mask transformations.
                 Return: None
@@ -24,10 +24,10 @@ class TikTok(Dataset):
 
     def __len__(self):
         """
-                Get the number of result in the dataset.
+                Get the number of Examples in the dataset.
                 Args: None
                 Returns:
-                    int: Number of result in the dataset.
+                    int: Number of Examples in the dataset.
                 """
         return len(self.list_images)
 

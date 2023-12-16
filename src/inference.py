@@ -8,9 +8,9 @@ import albumentations as A
 import sys
 from albumentations.pytorch import ToTensorV2
 sys.path.append('src')
-from model.model import Unet
+from src.model import Unet
 from PIL import Image
-from config.config import *
+from src.config import *
 def load_model(model_path):
     model = Unet()
     model.load_state_dict(torch.load(model_path))
@@ -63,12 +63,12 @@ def add_mask(img, mask):
 def process_image():
     """
         This function processes an uploaded image, makes a prediction using a model,
-        and returns the result with a yellow mask.
+        and returns the Examples with a yellow mask.
         Args:
             None
 
         Returns:
-            JSON: {'prediction': result} where result is a list representation of the processed image.
+            JSON: {'prediction': Examples} where Examples is a list representation of the processed image.
         """
     # Read the image file from the request
     file = request.files['file']
@@ -88,7 +88,7 @@ def process_image():
     transformed_image = transform['image'](image=image)
     image = transformed_image['image'].to(device)
 
-    # Get the shapes of the original and transformed result
+    # Get the shapes of the original and transformed Examples
     image_shape = image.shape
     image_1_shape = image_1.shape
 
@@ -108,10 +108,10 @@ def process_image():
     # Add the predicted mask to the original image
     result = add_mask(image_1, predicted)
 
-    # Resize the result to match the original image size
+    # Resize the Examples to match the original image size
     result = cv2.resize(result, (image_1_shape[1], image_1_shape[0]))
 
-    # Return the result as JSON
+    # Return the Examples as JSON
     return jsonify({'prediction': result.tolist()})
 
 
@@ -119,7 +119,7 @@ def process_image():
 def process_video():
     """
             This function processes an uploaded video, makes a prediction using a model,
-            and returns the result video with a yellow mask.
+            and returns the Examples video with a yellow mask.
             Args:
                 None
 

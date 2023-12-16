@@ -7,9 +7,9 @@ from sklearn.model_selection import train_test_split
 from albumentations.pytorch import ToTensorV2
 from torch import nn
 sys.path.append('src')
-from model.model import Unet
-from dataset.dataset import TikTok
-from config.config import *
+from src.model import Unet
+from src.dataset import TikTok
+from src.config import *
 torch.manual_seed(0)
 
 
@@ -112,7 +112,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("images_path", type=str, help='Specify path to your result of train dataset')
+    parser.add_argument("images_path", type=str, help='Specify path to your Examples of train dataset')
     parser.add_argument("masks_path", type=str,
                         help='Specify path to your masks of train dataset')
     parser.add_argument("--saved_model_path", type=str,

@@ -10,7 +10,7 @@ class Unet(nn.Module):
                The weights of the encoder are initialized with pre-trained ImageNet weights, and the parameters of
                the layers before the last residual block in the encoder are frozen.
 
-               The model expects input result with three channels and outputs segmentation masks with one channel.
+               The model expects input Examples with three channels and outputs segmentation masks with one channel.
 
                """
         super(Unet, self).__init__()
