@@ -3,6 +3,17 @@
 ### Overview
 This documentation provides information about the TikTok segmentation project, including the data used, the methods and ideas employed, and the accuracy achieved. It also includes usage instructions and author information.
 
+### Example for image:
+    
+![Input](Examples/input.png)
+
+
+![output](Examples/output.png)
+
+### Example for video:
+
+![output](Examples/input.gif)
+
 
 ### Data
 The dataset used for training and scoring is loaded with pytorch and consists images with dancing people.
@@ -11,6 +22,8 @@ The dataset used for training and scoring is loaded with pytorch and consists im
 )
 ## Model Architecture
 The TikTok segmentation neural network model is built using the Unet architecture. The architecture of the model consists two parts -- encoder and decoder.
+## IOU
+After training, the model achieved an IOU of 90% on the validation set.
 ## Usage
 ### Requirements
 
@@ -56,7 +69,12 @@ python inference.py --saved_model_path /path/to/your/saved/model
 ```
 Run streamlit ui
 ```bash
-streamlit run /home/solution/Downloads/project/TikTok/src/ui.py
+python ui.py
+```
+
+Open streamlit ui in browser
+```bash
+streamlit run /your_path/TikTok/src/ui.py
 ```
 ### With docker:
 Move to src folder
@@ -67,19 +85,6 @@ Run docker-compose
  ```bash
 docker-compose -f ./docker_compose.yml up
 ```
-## IOU
-After training, the model achieved an IOU of 90% on the validation set.
-
-### Example input/output image:
-    
-![Input](Examples/input.png)
-
-
-![output](Examples/output.png)
-
-### Example input/output video:
-
-![output](Examples/input.gif)
 
 ## Author
 This TikTok segmentation project was developed by Namchuk Maksym. If you have any questions, please contact with me: namchuk.maksym@gmail.com
