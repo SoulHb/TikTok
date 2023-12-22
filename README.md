@@ -50,6 +50,10 @@ The model is trained on the provided dataset using the following configuration:
 - Batch size: 8
 - Number of epochs: 10
 
+Move to src folder
+```bash
+cd src
+```
 Run train.py
 ```bash
 python train.py --saved_model_path your_model_path --epochs 10 --lr 0.001 --batch_size 32 /path/to/Examples /path/to/masks

@@ -45,8 +45,8 @@ SAVED_MODEL_FOLDER = config['saved_model_folder']
 MODEL_FILE = config['model_file']
 MODEL_URL = config['model_url']
 LR = config['lr']
-EPOCHS = config['batch_size']
-BATCH_SIZE = config['number_of_epochs']
+EPOCHS = config['number_of_epochs']
+BATCH_SIZE = config['batch_size']
 # Create Examples folder
 create_save_result_folder(SAVED_MODEL_FOLDER)
 # load model
