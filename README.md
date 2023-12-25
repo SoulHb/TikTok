@@ -81,13 +81,10 @@ Open streamlit ui in browser
 streamlit run /your_path/TikTok/src/ui.py
 ```
 ### With docker:
-Move to src folder
-```bash
-cd src
-```
+
 Run docker-compose
  ```bash
-docker-compose -f ./docker_compose.yml up
+docker-compose -f ./docker-compose.yml up
 ```
 
 ## Author
